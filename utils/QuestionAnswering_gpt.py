@@ -1,4 +1,4 @@
-# API_KEY: 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
+# API_KEY: xxx
 
 from typing import List
 from haystack.pipelines import Pipeline
