@@ -1,0 +1,1 @@
+## reader veya GPT kullanarak question generate edecek. Question API endpointinde kullanılacak.

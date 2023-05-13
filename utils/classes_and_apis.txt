@@ -1,0 +1,49 @@
+###########################################################################################################
+
+Classes:
+Helper and utility functions to be used in API endpoints.
+
+-----------------------------------------------------------------------------------------------------------
+
+documentPipeline: process given files, convert them into hs.document objects. Used in create_Project and Create_Source API endpoints.
+
+elasticClient: helper class to connect elastic of the user. Use get_document_store to use it in haystack classes. Used in almost all NLP endpoints.
+
+NERupdater: Extract named entities in TR and ENG, and update given hs.document objects.
+
+QA_GPT, QA_READER: Generates/extracts answers from documents.
+
+QGEN: Generates questions on documents.
+
+semanticSearch: BM25 based fast-lightweight retriever.
+
+SummaryUpdater: Extract summary in TR and ENG, and update given hs.document objects.
+
+###########################################################################################################
+
+API Endpoints:
+NLP endpoints for main functions.
+
+-----------------------------------------------------------------------------------------------------------
+
+semanticSearch: uses semanticsearch class, takes user query, retrieves most relevant answers from documents at "active source". 
+Will be used in Sources/search section.
+
+QuestionAnswer: uses QA_GPT, QA_READER classes, takes user query, retrieves answers from document at "active project".
+Will be used in Projects/Ask section.
+
+QuestionGenerate: uses QGEN class, takes user query (same query with QuestionAnswer), retrieve questions to be asked.
+
+updateNER: uses NERupdater class, takes request to update, updates entities sections of documents at "active project".
+Will  be used in Projects/Mentions section.
+
+updateSummary: uses SummaryUpdater class, takes request to update, updates summary sections of documents at "active project".
+Will  be used in Projects/Mentions section.
+
+
+###########################################################################################################
+
+NOT:
+
+Sonuçlar kötü gelirse, BM25 yerine DenseEmbedding Retriever ile değişttirilebilir tüm sistem.
+Embedding olması için EmbeddingUpdater diye bir class daha gerekiyor.
