@@ -1,0 +1,20 @@
+## Install Python 3.7, other ones gave error.
+
+## create a venv, activate
+
+## pip install ipykernel jupyter jupyterlab farm-haystack[all] --> install dependencies
+
+## python -m ipykernel install --user --name=myenv   --> set venv as kernel in jupyter
+
+## jupyter notebook --> run jupyter in venv
+
+## Then install cuda and its dependencies... Şimdilik gerek yok gibi.
+
+## xpdf tools yükle, link to the virtual environment path using mklink.
+## !pip install PyMuPDF
+    !pip install pdf2image
+    farm-haystack[ocr]
+    !pip install elasticsearch==7.15.1
+    
+    
+    
